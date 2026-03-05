@@ -45,6 +45,35 @@ const About = () => {
           </p>
         </motion.div>
 
+        {/* Trust section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="glass rounded-2xl p-8 mb-12"
+        >
+          <h3 className="text-xl font-semibold mb-4 text-primary">Para quem é este curso?</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-3">
+              <p className="text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Líderes técnicos</strong> que precisam entender como a IA pode otimizar processos, reduzir custos operacionais e aumentar a eficiência das equipes que gerenciam.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Gestores públicos</strong> que querem incorporar inteligência artificial de forma responsável, ética e estratégica na administração.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <p className="text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Tomadores de decisão</strong> que precisam de clareza sobre o que a IA realmente faz — e o que não faz — para liderar com segurança.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Equipes de inovação</strong> que buscam um ponto de partida prático e acessível para iniciar a jornada de adoção da IA nas suas organizações.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="grid md:grid-cols-2 gap-4">
           {items.map((item, i) => (
             <motion.div
@@ -60,6 +89,19 @@ const About = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Credibility bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 glass rounded-2xl p-6 text-center"
+        >
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            <strong className="text-foreground">Insights Políticos & Empresariais</strong> é uma empresa especializada em comunicação e estratégia, conectando líderes a conhecimentos práticos e atualizados sobre inovação, tecnologia e gestão. Nossos cursos são desenvolvidos com rigor técnico e linguagem acessível, ideais para profissionais que precisam decidir com segurança sobre o futuro digital.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
