@@ -8,14 +8,19 @@ const Hero = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
       
       <div className="container relative z-10 flex flex-col items-center text-center gap-8">
-        <motion.img
-          src={logo}
-          alt="Insights Políticos & Empresariais"
-          className="w-48 md:w-56 mix-blend-lighten"
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-        />
+          className="w-48 md:w-56 overflow-hidden"
+          style={{ background: 'hsl(210, 40%, 7%)' }}
+        >
+          <img
+            src={logo}
+            alt="Insights Políticos & Empresariais"
+            className="w-full mix-blend-lighten"
+          />
+        </motion.div>
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
