@@ -11,7 +11,7 @@ const Hero = () => {
         <motion.img
           src={logo}
           alt="Insights Políticos & Empresariais"
-          className="w-48 md:w-56 rounded-2xl"
+          className="w-48 md:w-56"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
