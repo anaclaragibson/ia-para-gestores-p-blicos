@@ -26,7 +26,7 @@ const WaitlistForm = () => {
     setPhone(formatPhone(e.target.value));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !phone.trim()) {
       toast.error("Preencha todos os campos.");
@@ -35,22 +35,32 @@ const WaitlistForm = () => {
 
     setLoading(true);
 
-    const entry: WaitlistEntry = {
-      name: name.trim(),
+    const data = {
+      fullName: name.trim(),
       email: email.trim(),
       phone: phone.trim(),
-      timestamp: new Date().toISOString(),
     };
 
-    const existing: WaitlistEntry[] = JSON.parse(localStorage.getItem("waitlist") || "[]");
-    existing.push(entry);
-    localStorage.setItem("waitlist", JSON.stringify(existing));
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbz8fDwPik76_uus3RNGDs0yaBOOgP4qQI3k0IZpFPeDmOyIM2am2NbCNuGSZvJs4Ykp/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
 
-    setName("");
-    setEmail("");
-    setPhone("");
-    setLoading(false);
-    toast.success("Inscrição realizada com sucesso! Entraremos em contato em breve.");
+      setName("");
+      setEmail("");
+      setPhone("");
+      toast.success("Inscrição realizada com sucesso! Entraremos em contato em breve.");
+    } catch {
+      toast.error("Erro ao enviar. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
