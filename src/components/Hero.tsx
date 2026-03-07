@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "@/assets/logo-original.png";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
   return (
@@ -11,7 +11,7 @@ const Hero = () => {
         <motion.img
           src={logo}
           alt="Insights Políticos & Empresariais"
-          className="w-48 md:w-56 mix-blend-screen"
+          className="w-56 md:w-64 mix-blend-lighten"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
