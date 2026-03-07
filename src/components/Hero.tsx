@@ -12,13 +12,16 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-48 md:w-56 overflow-hidden"
-          style={{ background: 'hsl(210, 40%, 7%)' }}
+          className="w-48 md:w-56"
+          style={{
+            WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%)',
+            maskImage: 'radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%)',
+          }}
         >
           <img
             src={logo}
             alt="Insights Políticos & Empresariais"
-            className="w-full mix-blend-lighten"
+            className="w-full"
           />
         </motion.div>
         
