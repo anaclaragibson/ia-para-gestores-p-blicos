@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-original.png";
 
 const Hero = () => {
   return (
@@ -8,22 +8,14 @@ const Hero = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
       
       <div className="container relative z-10 flex flex-col items-center text-center gap-8">
-        <motion.div
+        <motion.img
+          src={logo}
+          alt="Insights Políticos & Empresariais"
+          className="w-48 md:w-56"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-48 md:w-56"
-          style={{
-            WebkitMaskImage: 'radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%)',
-            maskImage: 'radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%)',
-          }}
-        >
-          <img
-            src={logo}
-            alt="Insights Políticos & Empresariais"
-            className="w-full"
-          />
-        </motion.div>
+        />
         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
