@@ -12,6 +12,7 @@ const Hero = () => {
           src={logo}
           alt="Insights Políticos & Empresariais"
           className="w-48 md:w-56"
+          style={{ mixBlendMode: 'screen' }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
