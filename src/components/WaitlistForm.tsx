@@ -215,7 +215,7 @@ const WaitlistForm = () => {
           {/* Setor */}
           <div>
             <label className="text-sm font-medium mb-3 block text-foreground">Você trabalha em:</label>
-            <div className="flex gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {["Órgão Público", "Empresa Privada"].map((option) => (
                 <label
                   key={option}
