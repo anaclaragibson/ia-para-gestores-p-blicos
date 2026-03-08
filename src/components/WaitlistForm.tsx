@@ -96,6 +96,7 @@ const WaitlistForm = () => {
   const [sector, setSector] = useState("");
   const [course, setCourse] = useState("");
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhone(formatPhone(e.target.value));
