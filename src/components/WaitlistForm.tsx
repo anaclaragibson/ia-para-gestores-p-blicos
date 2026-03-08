@@ -96,6 +96,7 @@ const WaitlistForm = () => {
   const [sector, setSector] = useState("");
   const [course, setCourse] = useState("");
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhone(formatPhone(e.target.value));
@@ -134,6 +135,7 @@ const WaitlistForm = () => {
       setPhone("");
       setSector("");
       setCourse("");
+      setSubmitted(true);
       toast.success("Inscrição realizada com sucesso! Entraremos em contato em breve.");
     } catch {
       toast.error("Erro ao enviar. Tente novamente.");
@@ -263,6 +265,25 @@ const WaitlistForm = () => {
           >
             {loading ? "Enviando..." : "Quero participar"}
           </button>
+
+          <AnimatePresence>
+            {submitted && (
+              <motion.a
+                href="/catalogo.pdf"
+                download
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.4 }}
+                className="w-full flex items-center justify-center gap-2 border-2 border-primary/30 text-primary font-semibold py-3.5 rounded-xl hover:bg-primary/[0.05] transition-all"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                Baixar Catálogo
+              </motion.a>
+            )}
+          </AnimatePresence>
         </motion.form>
       </div>
     </section>
