@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 import { toast } from "sonner";
+import { ChevronDown } from "lucide-react";
 
 const formatPhone = (value: string): string => {
   const digits = value.replace(/\D/g, "").slice(0, 11);
@@ -15,6 +16,78 @@ const courseOptions = [
   "Liderando de Forma Produtiva com IA — R$ 997,00",
   "Formação em Inteligência Artificial — R$ 2.997,00",
 ];
+
+const CustomSelect = ({
+  value,
+  onChange,
+  options,
+  placeholder,
+  inputClass,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  options: string[];
+  placeholder: string;
+  inputClass: string;
+}) => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className={`${inputClass} pr-10 cursor-pointer text-left flex items-center justify-between`}
+      >
+        <span className={value ? "text-foreground" : "text-muted-foreground/60"}>
+          {value || placeholder}
+        </span>
+        <ChevronDown
+          className={`w-4 h-4 text-muted-foreground absolute right-3.5 top-1/2 -translate-y-1/2 transition-transform duration-300 ${
+            open ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.ul
+            initial={{ opacity: 0, y: -4, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -4, scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+            className="absolute z-50 mt-2 w-full bg-background border border-border/60 rounded-2xl shadow-[0_8px_30px_-8px_hsl(var(--foreground)/0.12)] overflow-hidden py-1.5"
+          >
+            {options.map((opt) => (
+              <li
+                key={opt}
+                onClick={() => {
+                  onChange(opt);
+                  setOpen(false);
+                }}
+                className={`px-4 py-3 text-sm cursor-pointer transition-all duration-200 mx-1.5 rounded-xl ${
+                  value === opt
+                    ? "bg-primary/10 text-foreground font-medium"
+                    : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
+                }`}
+              >
+                {opt}
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const WaitlistForm = () => {
   const [name, setName] = useState("");
@@ -174,32 +247,13 @@ const WaitlistForm = () => {
           {/* Curso de interesse */}
           <div>
             <label className="text-sm font-medium mb-2 block text-foreground">Curso de interesse</label>
-            <div className="relative">
-              <select
-                value={course}
-                onChange={(e) => setCourse(e.target.value)}
-                className={`${inputClass} appearance-none pr-10 cursor-pointer`}
-                required
-              >
-                <option value="" disabled>
-                  Selecione um curso
-                </option>
-                {courseOptions.map((c) => (
-                  <option key={c} value={c}>
-                    {c}
-                  </option>
-                ))}
-              </select>
-              <svg
-                className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+            <CustomSelect
+              value={course}
+              onChange={setCourse}
+              options={courseOptions}
+              placeholder="Selecione um curso"
+              inputClass={inputClass}
+            />
           </div>
 
           <button
