@@ -47,19 +47,6 @@ const Hero = () => {
           >
             Entrar na Lista de Espera
           </a>
-          <a
-            href="#"
-            className="bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full text-lg hover:bg-primary/90 transition-colors"
-          >
-            Comprar Curso
-          </a>
-          <a
-            href="#"
-            download
-            className="border border-primary text-primary font-semibold px-8 py-4 rounded-full text-lg hover:bg-primary/10 transition-colors"
-          >
-            Baixar PDF
-          </a>
         </motion.div>
       </div>
     </section>
