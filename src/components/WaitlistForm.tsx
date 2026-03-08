@@ -135,6 +135,7 @@ const WaitlistForm = () => {
       setPhone("");
       setSector("");
       setCourse("");
+      setSubmitted(true);
       toast.success("Inscrição realizada com sucesso! Entraremos em contato em breve.");
     } catch {
       toast.error("Erro ao enviar. Tente novamente.");
