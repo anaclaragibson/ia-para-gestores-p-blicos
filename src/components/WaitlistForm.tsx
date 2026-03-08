@@ -70,7 +70,7 @@ const WaitlistForm = () => {
   };
 
   const inputClass =
-    "w-full bg-muted/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition";
+    "w-full bg-background/60 border border-border/60 rounded-2xl px-4 py-3.5 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 hover:border-primary/30 hover:bg-background/80 transition-all duration-300";
 
   return (
     <section className="py-24 px-4 relative bg-muted" id="lista-espera">
