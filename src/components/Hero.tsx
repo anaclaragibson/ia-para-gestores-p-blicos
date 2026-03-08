@@ -28,7 +28,7 @@ const Hero = () => {
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             Liderança Preparada:{" "}
-            <span className="text-gradient">IA na Prática</span>
+            <span className="text-gradient">IA no Setor Público</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Você não precisa ser "da tecnologia" para liderar na era da Inteligência Artificial. Mas precisa entender o suficiente para não ficar para trás.
