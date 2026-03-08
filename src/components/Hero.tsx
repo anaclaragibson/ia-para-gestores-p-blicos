@@ -35,15 +35,32 @@ const Hero = () => {
           </p>
         </motion.div>
 
-        <motion.a
-          href="#lista-espera"
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-glow"
+          className="flex flex-col sm:flex-row gap-4 items-center"
         >
-          Entrar na Lista de Espera
-        </motion.a>
+          <a
+            href="#lista-espera"
+            className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-glow"
+          >
+            Entrar na Lista de Espera
+          </a>
+          <a
+            href="#"
+            className="bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity"
+          >
+            Comprar Curso
+          </a>
+          <a
+            href="#"
+            download
+            className="border border-primary text-primary font-semibold px-8 py-4 rounded-full text-lg hover:bg-primary/10 transition-colors"
+          >
+            Baixar PDF
+          </a>
+        </motion.div>
       </div>
     </section>
   );
