@@ -184,7 +184,7 @@ const Courses = () => {
                     </span>
                   </p>
                   <a
-                    href="#lista-de-espera"
+                    href="#lista-espera"
                     className={`block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-all ${
                       course.highlight
                         ? "bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
