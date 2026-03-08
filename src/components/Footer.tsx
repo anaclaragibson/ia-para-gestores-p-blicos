@@ -19,7 +19,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass rounded-2xl p-8 w-full max-w-md text-center space-y-5"
+            className="bg-[hsl(210_30%_16%)] border border-[hsl(210_25%_22%)] rounded-2xl p-8 w-full max-w-md text-center space-y-5"
           >
             <h3 className="text-lg font-semibold text-primary">Entre em contato</h3>
 
