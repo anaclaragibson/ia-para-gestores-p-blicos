@@ -191,7 +191,7 @@ const Courses = () => {
                         : "bg-gradient-primary text-primary-foreground hover:opacity-90"
                     }`}
                   >
-                    Solicitar Informações
+                    Saiba Mais
                   </a>
                 </div>
               </motion.div>
