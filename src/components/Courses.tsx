@@ -175,27 +175,43 @@ const Courses = () => {
                 </ul>
 
                 <div className="mt-auto">
-                  <p className="mb-4">
-                    <span className="text-3xl font-bold">{course.price}</span>
-                    <span
-                      className={`text-sm ml-1 ${
-                        course.highlight ? "text-primary-foreground/70" : "text-muted-foreground"
-                      }`}
-                    >
-                      por pessoa
-                    </span>
-                  </p>
-                  <a
-                    href="#lista-espera"
-                    className={`block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-all ${
-                      course.highlight
-                        ? "bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
-                        : "bg-gradient-primary text-primary-foreground hover:opacity-90"
-                    }`}
-                  >
-                    Saiba Mais
-                  </a>
-                </div>
+                   <p className="mb-4">
+                     <span className="text-3xl font-bold">{course.price}</span>
+                     <span
+                       className={`text-sm ml-1 ${
+                         course.highlight ? "text-primary-foreground/70" : "text-muted-foreground"
+                       }`}
+                     >
+                       por pessoa
+                     </span>
+                   </p>
+                   <div className={`flex gap-3 ${course.buyUrl ? "flex-col" : ""}`}>
+                     <a
+                       href="#lista-espera"
+                       className={`block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-all ${
+                         course.highlight
+                           ? "bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
+                           : "bg-gradient-primary text-primary-foreground hover:opacity-90"
+                       }`}
+                     >
+                       Saiba Mais
+                     </a>
+                     {course.buyUrl && (
+                       <a
+                         href={course.buyUrl}
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         className={`block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-all border ${
+                           course.highlight
+                             ? "border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+                             : "border-primary text-primary hover:bg-primary/10"
+                         }`}
+                       >
+                         Comprar Agora
+                       </a>
+                     )}
+                   </div>
+                 </div>
               </motion.div>
             );
           })}
