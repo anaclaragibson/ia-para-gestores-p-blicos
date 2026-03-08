@@ -120,7 +120,7 @@ const WaitlistForm = () => {
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbz8fDwPik76_uus3RNGDs0yaBOOgP4qQI3k0IZpFPeDmOyIM2am2NbCNuGSZvJs4Ykp/exec",
+        "https://script.google.com/macros/s/AKfycbwUDVT2c1T_QdB3ScA9jaf-gA8hp9QotR34N1cnGMAoTkcGGd_OaNmxECbPc59EGZxj/exec",
         {
           method: "POST",
           mode: "no-cors",
