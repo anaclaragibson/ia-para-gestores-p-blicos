@@ -3,7 +3,7 @@ import logo from "@/assets/logo-new.png";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-16 px-4 bg-muted/50">
+    <footer className="py-16 px-4 bg-[hsl(210_30%_12%)] text-[hsl(210_20%_90%)]">
       <div className="container max-w-4xl">
         <div className="flex flex-col items-center gap-10">
           {/* Logo & brand */}
