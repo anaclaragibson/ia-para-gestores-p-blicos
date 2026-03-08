@@ -64,8 +64,8 @@ const WaitlistForm = () => {
   };
 
   return (
-    <section className="py-24 px-4 relative" id="lista-espera">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent" />
+    <section className="py-24 px-4 relative bg-muted" id="lista-espera">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.05] to-transparent" />
       <div className="container max-w-lg relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

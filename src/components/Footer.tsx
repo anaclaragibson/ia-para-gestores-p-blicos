@@ -63,8 +63,8 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-border text-center">
-          <p className="text-xs text-muted-foreground">
+        <div className="mt-10 pt-6 border-t border-[hsl(210_25%_22%)] text-center">
+          <p className="text-xs text-[hsl(210_15%_55%)]">
             © {new Date().getFullYear()} Insights Políticos & Empresariais. Todos os direitos reservados.
           </p>
         </div>
