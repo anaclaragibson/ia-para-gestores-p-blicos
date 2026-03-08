@@ -142,25 +142,30 @@ const WaitlistForm = () => {
           {/* Setor */}
           <div>
             <label className="text-sm font-medium mb-3 block text-foreground">Você trabalha em:</label>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {["Órgão Público", "Empresa Privada"].map((option) => (
                 <label
                   key={option}
-                  className={`flex items-center gap-2 cursor-pointer rounded-xl border px-4 py-3 text-sm transition-all flex-1 ${
+                  onClick={() => setSector(option)}
+                  className={`relative flex items-center justify-center cursor-pointer rounded-2xl border px-5 py-3.5 text-sm font-medium transition-all duration-300 flex-1 select-none ${
                     sector === option
-                      ? "border-primary bg-primary/10 text-foreground"
-                      : "border-border bg-muted/50 text-muted-foreground hover:border-primary/50"
+                      ? "border-primary/40 bg-primary/[0.08] text-foreground shadow-[0_0_0_1px_hsl(var(--primary)/0.2),0_2px_8px_-2px_hsl(var(--primary)/0.15)]"
+                      : "border-border/60 bg-background/60 text-muted-foreground hover:border-primary/30 hover:bg-primary/[0.03]"
                   }`}
                 >
-                  <input
-                    type="radio"
-                    name="sector"
-                    value={option}
-                    checked={sector === option}
-                    onChange={(e) => setSector(e.target.value)}
-                    className="accent-primary"
-                  />
+                  <span
+                    className={`mr-2.5 w-[18px] h-[18px] rounded-full border-2 flex items-center justify-center transition-all duration-300 shrink-0 ${
+                      sector === option
+                        ? "border-primary bg-primary"
+                        : "border-muted-foreground/30 bg-transparent"
+                    }`}
+                  >
+                    {sector === option && (
+                      <span className="w-[6px] h-[6px] rounded-full bg-primary-foreground" />
+                    )}
+                  </span>
                   {option}
+                  <input type="radio" name="sector" value={option} checked={sector === option} onChange={() => setSector(option)} className="sr-only" />
                 </label>
               ))}
             </div>
@@ -169,21 +174,32 @@ const WaitlistForm = () => {
           {/* Curso de interesse */}
           <div>
             <label className="text-sm font-medium mb-2 block text-foreground">Curso de interesse</label>
-            <select
-              value={course}
-              onChange={(e) => setCourse(e.target.value)}
-              className={`${inputClass} appearance-none`}
-              required
-            >
-              <option value="" disabled>
-                Selecione um curso
-              </option>
-              {courseOptions.map((c) => (
-                <option key={c} value={c}>
-                  {c}
+            <div className="relative">
+              <select
+                value={course}
+                onChange={(e) => setCourse(e.target.value)}
+                className={`${inputClass} appearance-none pr-10 cursor-pointer`}
+                required
+              >
+                <option value="" disabled>
+                  Selecione um curso
                 </option>
-              ))}
-            </select>
+                {courseOptions.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
+              </select>
+              <svg
+                className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
 
           <button
