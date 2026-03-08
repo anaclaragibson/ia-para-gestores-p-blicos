@@ -89,7 +89,7 @@ const CustomSelect = ({
   );
 };
 
-  const [name, setName] = useState("");
+  const WaitlistForm = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [sector, setSector] = useState("");
