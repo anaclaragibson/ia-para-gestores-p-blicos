@@ -2,13 +2,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { toast } from "sonner";
 
-interface WaitlistEntry {
-  name: string;
-  email: string;
-  phone: string;
-  timestamp: string;
-}
-
 const formatPhone = (value: string): string => {
   const digits = value.replace(/\D/g, "").slice(0, 11);
   if (digits.length <= 2) return digits.length ? `(${digits}` : "";
@@ -16,10 +9,19 @@ const formatPhone = (value: string): string => {
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 };
 
+const courseOptions = [
+  "Liderança Preparada para IA — R$ 297,00",
+  "IA na Prática para Órgãos Públicos — R$ 697,00",
+  "Liderando de Forma Produtiva com IA — R$ 997,00",
+  "Formação em Inteligência Artificial — R$ 2.997,00",
+];
+
 const WaitlistForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [sector, setSector] = useState("");
+  const [course, setCourse] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +30,7 @@ const WaitlistForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim() || !phone.trim()) {
+    if (!name.trim() || !email.trim() || !phone.trim() || !sector || !course) {
       toast.error("Preencha todos os campos.");
       return;
     }
@@ -39,6 +41,8 @@ const WaitlistForm = () => {
       fullName: name.trim(),
       email: email.trim(),
       phone: phone.trim(),
+      sector,
+      course,
     };
 
     try {
@@ -55,6 +59,8 @@ const WaitlistForm = () => {
       setName("");
       setEmail("");
       setPhone("");
+      setSector("");
+      setCourse("");
       toast.success("Inscrição realizada com sucesso! Entraremos em contato em breve.");
     } catch {
       toast.error("Erro ao enviar. Tente novamente.");
@@ -62,6 +68,9 @@ const WaitlistForm = () => {
       setLoading(false);
     }
   };
+
+  const inputClass =
+    "w-full bg-muted/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition";
 
   return (
     <section className="py-24 px-4 relative bg-muted" id="lista-espera">
@@ -101,7 +110,7 @@ const WaitlistForm = () => {
               onChange={(e) => setName(e.target.value)}
               placeholder="Seu nome"
               maxLength={100}
-              className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition"
+              className={inputClass}
               required
             />
           </div>
@@ -113,7 +122,7 @@ const WaitlistForm = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="seu@email.com"
               maxLength={255}
-              className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition"
+              className={inputClass}
               required
             />
           </div>
@@ -125,10 +134,58 @@ const WaitlistForm = () => {
               onChange={handlePhoneChange}
               placeholder="(69) 99999-9999"
               maxLength={15}
-              className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition"
+              className={inputClass}
               required
             />
           </div>
+
+          {/* Setor */}
+          <div>
+            <label className="text-sm font-medium mb-3 block text-foreground">Você trabalha em:</label>
+            <div className="flex gap-4">
+              {["Órgão Público", "Empresa Privada"].map((option) => (
+                <label
+                  key={option}
+                  className={`flex items-center gap-2 cursor-pointer rounded-xl border px-4 py-3 text-sm transition-all flex-1 ${
+                    sector === option
+                      ? "border-primary bg-primary/10 text-foreground"
+                      : "border-border bg-muted/50 text-muted-foreground hover:border-primary/50"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="sector"
+                    value={option}
+                    checked={sector === option}
+                    onChange={(e) => setSector(e.target.value)}
+                    className="accent-primary"
+                  />
+                  {option}
+                </label>
+              ))}
+            </div>
+          </div>
+
+          {/* Curso de interesse */}
+          <div>
+            <label className="text-sm font-medium mb-2 block text-foreground">Curso de interesse</label>
+            <select
+              value={course}
+              onChange={(e) => setCourse(e.target.value)}
+              className={`${inputClass} appearance-none`}
+              required
+            >
+              <option value="" disabled>
+                Selecione um curso
+              </option>
+              {courseOptions.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <button
             type="submit"
             disabled={loading}
