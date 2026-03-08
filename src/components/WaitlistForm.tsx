@@ -182,6 +182,7 @@ const WaitlistForm = () => {
               placeholder="Selecione um curso"
               inputClass={inputClass}
             />
+          </div>
 
           <button
             type="submit"
