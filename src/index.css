@@ -37,9 +37,9 @@
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(193 70% 47%), hsl(252 42% 37%));
+    --gradient-primary: linear-gradient(135deg, hsl(187 90% 46%), hsl(263 84% 58%));
     --gradient-subtle: linear-gradient(180deg, hsl(210 40% 7%) 0%, hsl(210 35% 10%) 100%);
-    --shadow-glow: 0 0 40px -10px hsl(193 70% 47% / 0.3);
+    --shadow-glow: 0 0 40px -10px hsl(187 90% 46% / 0.3);
     --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.3);
 
     --sidebar-background: 0 0% 98%;
