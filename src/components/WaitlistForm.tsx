@@ -118,7 +118,7 @@ const WaitlistForm = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [sector, setSector] = useState("");
-  const [course, setCourse] = useState("");
+  const [courses, setCourses] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
