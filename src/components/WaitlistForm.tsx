@@ -140,7 +140,7 @@ const WaitlistForm = () => {
       email: email.trim(),
       phone: phone.trim(),
       sector,
-      course,
+      course: courses.join("; "),
     };
 
     try {
