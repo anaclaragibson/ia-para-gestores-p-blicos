@@ -17,17 +17,15 @@ const courseOptions = [
   "Formação em Inteligência Artificial — R$ 2.997,00",
 ];
 
-const CustomSelect = ({
-  value,
+const MultiSelectCourses = ({
+  selected,
   onChange,
   options,
-  placeholder,
   inputClass,
 }: {
-  value: string;
-  onChange: (v: string) => void;
+  selected: string[];
+  onChange: (v: string[]) => void;
   options: string[];
-  placeholder: string;
   inputClass: string;
 }) => {
   const [open, setOpen] = useState(false);
@@ -41,6 +39,19 @@ const CustomSelect = ({
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  const toggle = (opt: string) => {
+    onChange(
+      selected.includes(opt) ? selected.filter((s) => s !== opt) : [...selected, opt]
+    );
+  };
+
+  const label =
+    selected.length === 0
+      ? null
+      : selected.length === 1
+      ? selected[0]
+      : `${selected.length} cursos selecionados`;
+
   return (
     <div className="relative" ref={ref}>
       <button
@@ -48,8 +59,8 @@ const CustomSelect = ({
         onClick={() => setOpen(!open)}
         className={`${inputClass} pr-10 cursor-pointer text-left flex items-center justify-between`}
       >
-        <span className={value ? "text-foreground" : "text-muted-foreground/60"}>
-          {value || placeholder}
+        <span className={label ? "text-foreground" : "text-muted-foreground/60"}>
+          {label || "Selecione os cursos"}
         </span>
         <ChevronDown
           className={`w-4 h-4 text-muted-foreground absolute right-3.5 top-1/2 -translate-y-1/2 transition-transform duration-300 ${
@@ -66,22 +77,35 @@ const CustomSelect = ({
             transition={{ duration: 0.2 }}
             className="absolute z-50 mt-2 w-full bg-background border border-border/60 rounded-2xl shadow-[0_8px_30px_-8px_hsl(var(--foreground)/0.12)] overflow-hidden py-1.5"
           >
-            {options.map((opt) => (
-              <li
-                key={opt}
-                onClick={() => {
-                  onChange(opt);
-                  setOpen(false);
-                }}
-                className={`px-4 py-3 text-sm cursor-pointer transition-all duration-200 mx-1.5 rounded-xl ${
-                  value === opt
-                    ? "bg-primary/10 text-foreground font-medium"
-                    : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
-                }`}
-              >
-                {opt}
-              </li>
-            ))}
+            {options.map((opt) => {
+              const checked = selected.includes(opt);
+              return (
+                <li
+                  key={opt}
+                  onClick={() => toggle(opt)}
+                  className={`px-4 py-3 text-sm cursor-pointer transition-all duration-200 mx-1.5 rounded-xl flex items-center gap-2.5 ${
+                    checked
+                      ? "bg-primary/10 text-foreground font-medium"
+                      : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
+                  }`}
+                >
+                  <span
+                    className={`w-[18px] h-[18px] rounded-md border-2 flex items-center justify-center shrink-0 transition-all duration-200 ${
+                      checked
+                        ? "border-primary bg-primary"
+                        : "border-muted-foreground/30 bg-transparent"
+                    }`}
+                  >
+                    {checked && (
+                      <svg className="w-3 h-3 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </span>
+                  {opt}
+                </li>
+              );
+            })}
           </motion.ul>
         )}
       </AnimatePresence>
@@ -94,7 +118,7 @@ const WaitlistForm = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [sector, setSector] = useState("");
-  const [course, setCourse] = useState("");
+  const [courses, setCourses] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -104,7 +128,7 @@ const WaitlistForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim() || !phone.trim() || !sector || !course) {
+    if (!name.trim() || !email.trim() || !phone.trim() || !sector || courses.length === 0) {
       toast.error("Preencha todos os campos.");
       return;
     }
@@ -116,7 +140,7 @@ const WaitlistForm = () => {
       email: email.trim(),
       phone: phone.trim(),
       sector,
-      course,
+      course: courses.join("; "),
     };
 
     try {
@@ -134,7 +158,7 @@ const WaitlistForm = () => {
       setEmail("");
       setPhone("");
       setSector("");
-      setCourse("");
+      setCourses([]);
       setSubmitted(true);
       toast.success("Inscrição realizada com sucesso! Entraremos em contato em breve.");
     } catch {
@@ -248,12 +272,11 @@ const WaitlistForm = () => {
 
           {/* Curso de interesse */}
           <div>
-            <label className="text-sm font-medium mb-2 block text-foreground">Curso de interesse</label>
-            <CustomSelect
-              value={course}
-              onChange={setCourse}
+            <label className="text-sm font-medium mb-2 block text-foreground">Cursos de interesse</label>
+            <MultiSelectCourses
+              selected={courses}
+              onChange={setCourses}
               options={courseOptions}
-              placeholder="Selecione um curso"
               inputClass={inputClass}
             />
           </div>
