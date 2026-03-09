@@ -128,7 +128,7 @@ const WaitlistForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim() || !phone.trim() || !sector || !course) {
+    if (!name.trim() || !email.trim() || !phone.trim() || !sector || courses.length === 0) {
       toast.error("Preencha todos os campos.");
       return;
     }
