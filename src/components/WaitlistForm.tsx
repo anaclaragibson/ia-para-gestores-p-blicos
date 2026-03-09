@@ -158,7 +158,7 @@ const WaitlistForm = () => {
       setEmail("");
       setPhone("");
       setSector("");
-      setCourse("");
+      setCourses([]);
       setSubmitted(true);
       toast.success("Inscrição realizada com sucesso! Entraremos em contato em breve.");
     } catch {
