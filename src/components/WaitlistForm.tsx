@@ -272,12 +272,11 @@ const WaitlistForm = () => {
 
           {/* Curso de interesse */}
           <div>
-            <label className="text-sm font-medium mb-2 block text-foreground">Curso de interesse</label>
-            <CustomSelect
-              value={course}
-              onChange={setCourse}
+            <label className="text-sm font-medium mb-2 block text-foreground">Cursos de interesse</label>
+            <MultiSelectCourses
+              selected={courses}
+              onChange={setCourses}
               options={courseOptions}
-              placeholder="Selecione um curso"
               inputClass={inputClass}
             />
           </div>
