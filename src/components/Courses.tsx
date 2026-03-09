@@ -33,8 +33,7 @@ const courses = [
       "Oficina guiada com tarefa real",
     ],
     price: "R$ 697,00",
-    highlight: true,
-    badge: "MAIS PROCURADO",
+    highlight: false,
     icon: Sparkles,
   },
   {
