@@ -65,22 +65,22 @@ const Speaker = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass rounded-xl p-5 text-center">
-                <p className="text-2xl font-bold text-primary">R$ 300M+</p>
-                <p className="text-xs text-muted-foreground mt-1">em EBITDA gerado</p>
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
+              <div className="glass rounded-xl p-4 md:p-5 text-center">
+                <p className="text-lg md:text-2xl font-bold text-primary">R$ 300M+</p>
+                <p className="text-[11px] md:text-xs text-muted-foreground mt-1">em EBITDA gerado</p>
               </div>
-              <div className="glass rounded-xl p-5 text-center">
-                <p className="text-2xl font-bold text-primary">R$ 2B+</p>
-                <p className="text-xs text-muted-foreground mt-1">em Valuation</p>
+              <div className="glass rounded-xl p-4 md:p-5 text-center">
+                <p className="text-lg md:text-2xl font-bold text-primary">R$ 2B+</p>
+                <p className="text-[11px] md:text-xs text-muted-foreground mt-1">em Valuation</p>
               </div>
-              <div className="glass rounded-xl p-5 text-center">
-                <p className="text-2xl font-bold text-primary">FGV & Harvard</p>
-                <p className="text-xs text-muted-foreground mt-1">Especializações</p>
+              <div className="glass rounded-xl p-4 md:p-5 text-center">
+                <p className="text-base md:text-2xl font-bold text-primary leading-tight">FGV & Harvard</p>
+                <p className="text-[11px] md:text-xs text-muted-foreground mt-1">Especializações</p>
               </div>
-              <div className="glass rounded-xl p-5 text-center">
-                <p className="text-2xl font-bold text-primary">3 Formações</p>
-                <p className="text-xs text-muted-foreground mt-1">Direito, Admin & Big Data</p>
+              <div className="glass rounded-xl p-4 md:p-5 text-center">
+                <p className="text-base md:text-2xl font-bold text-primary leading-tight">3 Formações</p>
+                <p className="text-[11px] md:text-xs text-muted-foreground mt-1">Direito, Admin & Big Data</p>
               </div>
             </div>
           </motion.div>
