@@ -61,7 +61,7 @@ const Speaker = () => {
                 Sua experiência abrange desde a concepção de produtos digitais até a implementação de estratégias de transformação digital em organizações de grande porte, sempre com foco em resultados mensuráveis e impacto real.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Reconhecida por traduzir conceitos complexos de tecnologia em linguagem acessível para gestores e líderes, Anndrea tem formado centenas de profissionais em todo o Brasil, capacitando-os a tomar decisões mais inteligentes com o apoio de dados e IA.
+                Reconhecida por <strong className="text-foreground">traduzir conceitos complexos de tecnologia em linguagem acessível</strong> para gestores e líderes, Anndrea tem formado centenas de profissionais em todo o Brasil, capacitando-os a <strong className="text-foreground">tomar decisões mais inteligentes</strong> com o apoio de dados e IA.
               </p>
             </div>
 
