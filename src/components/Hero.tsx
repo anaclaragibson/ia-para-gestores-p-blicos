@@ -43,9 +43,17 @@ const Hero = () => {
         >
           <a
             href="#lista-espera"
-            className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-glow"
+            className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-glow text-center"
           >
-            Entrar na Lista de Espera
+            Quero participar da próxima turma
+          </a>
+          <a
+            href="https://wa.me/5569999999999?text=Olá! Gostaria de levar o curso para minha equipe."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-2 border-primary text-primary font-semibold px-8 py-4 rounded-full text-lg hover:bg-primary/10 transition-all text-center"
+          >
+            Quero levar para minha equipe
           </a>
         </motion.div>
       </div>
