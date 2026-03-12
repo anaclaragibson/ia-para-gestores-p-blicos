@@ -45,7 +45,7 @@ const About = () => {
             A <strong className="text-foreground">Insights Políticos e Empresariais</strong> é referência em comunicação e estratégia no estado de Rondônia, com foco em inteligência de dados e tecnologias de ponta para a construção de narrativas vencedoras e otimização da gestão pública e privada.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Em parceria estratégica com a renomada especialista <strong className="text-foreground">Andrea Franco</strong>, apresentamos um marco para a modernização da administração estadual: o curso <strong className="text-foreground">"IA para Órgãos Públicos"</strong>.
+            Em parceria estratégica com a renomada especialista <strong className="text-foreground">Anndrêa Franco</strong>, apresentamos um marco para a modernização da administração estadual: um ecossistema de <strong className="text-foreground">Formação em Inteligência Artificial</strong> focado em Órgãos Públicos.
           </p>
         </motion.div>
 
