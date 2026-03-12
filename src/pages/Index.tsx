@@ -5,6 +5,7 @@ import Speaker from "@/components/Speaker";
 import Courses from "@/components/Courses";
 import WaitlistForm from "@/components/WaitlistForm";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Courses />
       <WaitlistForm />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
