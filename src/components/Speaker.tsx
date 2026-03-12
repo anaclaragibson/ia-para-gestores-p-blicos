@@ -49,7 +49,7 @@ const Speaker = () => {
             <div className="glass rounded-2xl p-8 space-y-4">
               <h3 className="text-xl font-semibold text-primary">Sobre a especialista</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Professora, executiva de Estratégia e Inovação e fundadora da <strong className="text-foreground">Fábrica de Produto</strong> e da <strong className="text-foreground">AF Educação</strong>.
+                Professora, executiva de Estratégia e Inovação e fundadora da Fábrica de Produto e da AF Educação.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Com formação em <strong className="text-foreground">Direito</strong>, <strong className="text-foreground">Administração</strong> e <strong className="text-foreground">Big Data</strong>, além de especializações pela <strong className="text-foreground">FGV</strong> e <strong className="text-foreground">Harvard</strong>, Anndrea é referência nacional em inovação, transformação digital e uso estratégico de dados e Inteligência Artificial.
