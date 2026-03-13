@@ -32,7 +32,7 @@ const Speaker = () => {
             <div className="rounded-3xl overflow-hidden shadow-glow">
               <img
                 src={speakerImg}
-                alt="Anndrea Franco - Especialista em IA e Inovação"
+                alt="Anndrêa Franco - Especialista em IA e Inovação"
                 className="w-full aspect-[3/4] object-cover"
               />
             </div>
