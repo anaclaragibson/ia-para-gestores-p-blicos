@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
             <p className="text-sm font-semibold text-white">Insights Políticos & Empresariais</p>
             <p className="text-xs text-white/70">Comunicação & Estratégia</p>
-            <p className="text-sm font-medium text-white">insghtspe@gmail.com</p>
+            <a href="mailto:insghtspe@gmail.com" className="text-sm font-medium text-white hover:text-white/80 transition-colors">insghtspe@gmail.com</a>
           </motion.div>
 
           {/* Contact links */}
