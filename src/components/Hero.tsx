@@ -10,8 +10,8 @@ const Hero = () => {
       <div className="container relative z-10 flex flex-col items-center text-center gap-8">
         <motion.img
           src={logo}
-          alt="Insights Políticos & Empresariais"
-          className="w-56 md:w-64 bg-white/60 backdrop-blur-sm rounded-[2rem] p-6 shadow-[0_8px_32px_-8px_hsl(187_90%_42%/0.15)]"
+          alt="Insights Academy"
+          className="w-56 md:w-64"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
