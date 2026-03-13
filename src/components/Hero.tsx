@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "@/assets/logo-new.png";
+import logo from "@/assets/logo-academy.png";
 
 const Hero = () => {
   return (
