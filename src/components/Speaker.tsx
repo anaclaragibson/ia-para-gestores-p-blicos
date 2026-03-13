@@ -16,7 +16,7 @@ const Speaker = () => {
             Especialista
           </p>
           <h2 className="text-3xl md:text-5xl font-bold">
-            Anndrea <span className="text-gradient">Franco</span>
+            Anndrêa <span className="text-gradient">Franco</span>
           </h2>
         </motion.div>
 
@@ -32,7 +32,7 @@ const Speaker = () => {
             <div className="rounded-3xl overflow-hidden shadow-glow">
               <img
                 src={speakerImg}
-                alt="Anndrea Franco - Especialista em IA e Inovação"
+                alt="Anndrêa Franco - Especialista em IA e Inovação"
                 className="w-full aspect-[3/4] object-cover"
               />
             </div>
@@ -52,7 +52,7 @@ const Speaker = () => {
                 Professora, executiva de Estratégia e Inovação e fundadora da Fábrica de Produto e da AF Educação.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Com formação em <strong className="text-foreground">Direito</strong>, <strong className="text-foreground">Administração</strong> e <strong className="text-foreground">Big Data</strong>, além de especializações pela <strong className="text-foreground">FGV</strong> e <strong className="text-foreground">Harvard</strong>, Anndrea é referência nacional em inovação, transformação digital e uso estratégico de dados e Inteligência Artificial.
+                Com formação em <strong className="text-foreground">Direito</strong>, <strong className="text-foreground">Administração</strong> e <strong className="text-foreground">Big Data</strong>, além de especializações pela <strong className="text-foreground">FGV</strong> e <strong className="text-foreground">Harvard</strong>, Anndrêa é referência nacional em inovação, transformação digital e uso estratégico de dados e Inteligência Artificial.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Com ampla atuação em projetos de alto impacto, liderou iniciativas que geraram mais de <strong className="text-foreground">R$ 300 milhões em EBITDA</strong> e <strong className="text-foreground">R$ 2 bilhões em valuation</strong>.
@@ -61,7 +61,7 @@ const Speaker = () => {
                 Sua experiência abrange desde a concepção de produtos digitais até a implementação de estratégias de transformação digital em organizações de grande porte, sempre com foco em resultados mensuráveis e impacto real.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Reconhecida por <strong className="text-foreground">traduzir conceitos complexos de tecnologia em linguagem acessível</strong> para gestores e líderes, Anndrea tem formado centenas de profissionais em todo o Brasil, capacitando-os a <strong className="text-foreground">tomar decisões mais inteligentes</strong> com o apoio de dados e IA.
+                Reconhecida por <strong className="text-foreground">traduzir conceitos complexos de tecnologia em linguagem acessível</strong> para gestores e líderes, Anndrêa tem formado centenas de profissionais em todo o Brasil, capacitando-os a <strong className="text-foreground">tomar decisões mais inteligentes</strong> com o apoio de dados e IA.
               </p>
             </div>
 
