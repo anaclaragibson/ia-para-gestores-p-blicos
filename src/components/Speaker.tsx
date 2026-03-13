@@ -52,7 +52,7 @@ const Speaker = () => {
                 Professora, executiva de Estratégia e Inovação e fundadora da Fábrica de Produto e da AF Educação.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Com formação em <strong className="text-foreground">Direito</strong>, <strong className="text-foreground">Administração</strong> e <strong className="text-foreground">Big Data</strong>, além de especializações pela <strong className="text-foreground">FGV</strong> e <strong className="text-foreground">Harvard</strong>, Anndrea é referência nacional em inovação, transformação digital e uso estratégico de dados e Inteligência Artificial.
+                Com formação em <strong className="text-foreground">Direito</strong>, <strong className="text-foreground">Administração</strong> e <strong className="text-foreground">Big Data</strong>, além de especializações pela <strong className="text-foreground">FGV</strong> e <strong className="text-foreground">Harvard</strong>, Anndrêa é referência nacional em inovação, transformação digital e uso estratégico de dados e Inteligência Artificial.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Com ampla atuação em projetos de alto impacto, liderou iniciativas que geraram mais de <strong className="text-foreground">R$ 300 milhões em EBITDA</strong> e <strong className="text-foreground">R$ 2 bilhões em valuation</strong>.
