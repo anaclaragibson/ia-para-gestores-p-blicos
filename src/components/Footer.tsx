@@ -35,7 +35,7 @@ const Footer = () => {
             className="pt-10 space-y-2"
           >
             <div className="flex flex-col items-center gap-3 mb-4">
-              <img src={logo} alt="Insights Políticos & Empresariais" className="w-14 rounded-xl bg-white/80 backdrop-blur-sm p-2 shadow-[0_4px_16px_-4px_rgba(255,255,255,0.2)]" />
+              <img src={logo} alt="Insights Academy" className="w-14" />
             </div>
             <p className="text-sm font-semibold text-white">Insights Políticos & Empresariais</p>
             <p className="text-xs text-white/70">Comunicação & Estratégia</p>
