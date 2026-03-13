@@ -48,7 +48,7 @@ const Hero = () => {
             Quero participar da próxima turma
           </a>
           <a
-            href="https://wa.me/5569992712740?text=Olá! Gostaria de levar o curso para minha equipe."
+            href="https://wa.me/5569999236876?text=Olá! Gostaria de levar o curso para minha equipe."
             target="_blank"
             rel="noopener noreferrer"
             className="border-2 border-primary text-primary font-semibold px-8 py-4 rounded-full text-lg hover:bg-primary/10 transition-all text-center"
