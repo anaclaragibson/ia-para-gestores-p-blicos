@@ -186,7 +186,7 @@ const WaitlistForm = () => {
             Garanta sua vaga
           </p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Lista de <span className="text-gradient">Espera</span>
+            Quero participar da <span className="text-gradient">próxima turma</span>
           </h2>
           <p className="text-muted-foreground">
             Preencha seus dados e seja avisado assim que as inscrições abrirem.
