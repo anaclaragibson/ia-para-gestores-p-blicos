@@ -16,7 +16,7 @@ const Speaker = () => {
             Especialista
           </p>
           <h2 className="text-3xl md:text-5xl font-bold">
-            Anndrea <span className="text-gradient">Franco</span>
+            Anndrêa <span className="text-gradient">Franco</span>
           </h2>
         </motion.div>
 
