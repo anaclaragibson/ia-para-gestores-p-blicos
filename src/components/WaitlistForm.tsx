@@ -145,7 +145,7 @@ const WaitlistForm = () => {
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbwUDVT2c1T_QdB3ScA9jaf-gA8hp9QotR34N1cnGMAoTkcGGd_OaNmxECbPc59EGZxj/exec",
+        "https://script.google.com/macros/s/AKfycbyPwgn1con3_yabMMjyPcI7nhj_BQih96hCZJMcmeAM-DsFBakxzut2bJmrgW3kGe_N/exec",
         {
           method: "POST",
           mode: "no-cors",
