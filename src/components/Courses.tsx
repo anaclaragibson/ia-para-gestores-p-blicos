@@ -53,7 +53,7 @@ const courses = [
     highlight: true,
     badge: "MAIS PROCURADO",
     icon: TrendingUp,
-    buyUrl: "https://youtube.com",
+    buyUrl: "https://wa.me/5569999236876",
   },
   {
     title: "Formação em Inteligência Artificial",
@@ -72,7 +72,7 @@ const courses = [
     price: "R$ 2.997,00",
     highlight: false,
     icon: Shield,
-    buyUrl: "https://youtube.com",
+    buyUrl: "https://wa.me/5569999236876",
   },
 ];
 
