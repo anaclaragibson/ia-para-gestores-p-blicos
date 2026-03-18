@@ -72,7 +72,7 @@ const courses = [
     price: "R$ 2.997,00",
     highlight: false,
     icon: Shield,
-    buyUrl: "https://youtube.com",
+    buyUrl: "https://wa.me/5569999236876",
   },
 ];
 
